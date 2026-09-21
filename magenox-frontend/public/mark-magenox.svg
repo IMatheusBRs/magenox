@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Magenox">
+  <defs>
+    <linearGradient id="mx-steel" gradientUnits="userSpaceOnUse" x1="0" y1="16" x2="0" y2="114">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="18%" stop-color="#C4CEDB"/>
+      <stop offset="40%" stop-color="#5F6975"/>
+      <stop offset="55%" stop-color="#EDF2F8"/>
+      <stop offset="72%" stop-color="#8A94A2"/>
+      <stop offset="88%" stop-color="#DCE4EE"/>
+      <stop offset="100%" stop-color="#5A636F"/>
+    </linearGradient>
+    <linearGradient id="mx-steel-x" gradientUnits="userSpaceOnUse" x1="0" y1="38" x2="0" y2="94">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#B9C4D1"/>
+      <stop offset="38%" stop-color="#69737F"/>
+      <stop offset="54%" stop-color="#F1F6FB"/>
+      <stop offset="70%" stop-color="#98A3B1"/>
+      <stop offset="86%" stop-color="#E6EDF5"/>
+      <stop offset="100%" stop-color="#7E8894"/>
+    </linearGradient>
+    <linearGradient id="mx-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A9DDFF"/><stop offset="50%" stop-color="#2E9BFF"/>
+      <stop offset="100%" stop-color="#0B5BD3"/>
+    </linearGradient>
+    <radialGradient id="mx-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2E9BFF" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#2E9BFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mx-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <path d="M12 44 L30 12 L64 28 L98 12 L116 44 L116 84 L64 112 L12 84 Z" fill="url(#mx-steel)"/>
+  <path d="M21 48 L34 24 L64 36 L94 24 L107 48 L107 82 L64 101 L21 82 Z" fill="#060A10"/>
+  <path d="M21 48 L34 24 L64 36 L94 24 L107 48 L107 82 L64 101 L21 82 Z" fill="none" stroke="url(#mx-blue)" stroke-width="1" opacity="0.45"/>
+
+  <circle cx="64" cy="68" r="30" fill="url(#mx-core)"/>
+
+  <path d="M26 48 L42 38 L64 66 L86 38 L102 48 L74 72 L90 84 L76 94 L64 80 L52 94 L38 84 L54 72 Z" fill="url(#mx-steel-x)"/>
+  <g stroke="url(#mx-blue)" stroke-width="2.6" stroke-linecap="round">
+    <path d="M39 50 L50 62"/>
+    <path d="M89 50 L78 62"/>
+  </g>
+
+  <g filter="url(#mx-glow)">
+    <path d="M59.02 53.66 A5.5 5.5 0 1 0 68.98 53.66 A5 5 0 0 1 59.02 53.66 Z" fill="url(#mx-blue)"/>
+    <path d="M64 37 Q65.4 42.7 70.5 44 Q65.4 45.3 64 51 Q62.6 45.3 57.5 44 Q62.6 42.7 64 37 Z" fill="#E2F2FF"/>
+  </g>
+
+  <path d="M64 70 L68.8 79 L65.8 81 L65 95 L64 98 L63 95 L62.2 81 L59.2 79 Z" fill="url(#mx-blue)"/>
+</svg>

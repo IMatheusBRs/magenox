@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Saira", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Base — derivado do fundo da logo */
+  --color-void: #04070c;
+  --color-abyss: #070b12;
+  --color-panel: #0a1018;
+  --color-panel-2: #0e151f;
+  --color-line: #18202d;
+  --color-line-2: #222c3c;
+
+  /* Metal — cromado da logo */
+  --color-steel-100: #f4f7fb;
+  --color-steel-200: #d7dee8;
+  --color-steel-300: #b8c2cf;
+  --color-steel-400: #8e9aaa;
+  --color-steel-500: #6b7583;
+  --color-steel-600: #4a535f;
+
+  /* Azul elétrico — o X */
+  --color-signal: #1e7bff;
+  --color-signal-light: #6fc0ff;
+  --color-signal-deep: #0b5bd3;
+
+  /* Estados */
+  --color-critical: #ff5364;
+  --color-warn: #f5a524;
+  --color-secure: #2fd6a0;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-color: var(--color-void);
+    color: var(--color-steel-200);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-signal) 40%, transparent);
+    color: #fff;
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-void); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-2);
+    border-radius: 999px;
+    border: 2px solid var(--color-void);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-steel-600); }
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+}
+
+@utility container-x {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 768px) { padding-inline: 2rem; }
+}
+
+/* Texto com acabamento cromado da marca */
+@utility text-chrome {
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d3dbe6 30%,
+    #8a94a2 55%,
+    #e6ecf4 74%,
+    #9aa4b2 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility text-blue-glow {
+  color: var(--color-signal-light);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--color-signal) 60%, transparent);
+}
+
+@utility hairline {
+  border: 1px solid var(--color-line);
+}
+
+@utility panel-surface {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 45%),
+    var(--color-panel);
+  border: 1px solid var(--color-line);
+}
+
+/* Fundo de circuito / grade — ecoa a arte da logo */
+@utility circuit-grid {
+  background-image:
+    linear-gradient(to right, rgba(120, 150, 190, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 150, 190, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@keyframes mx-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes mx-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  12% { opacity: 0.75; }
+  88% { opacity: 0.75; }
+  100% { transform: translateY(1200%); opacity: 0; }
+}
+@keyframes mx-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+@keyframes mx-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes mx-dash {
+  to { stroke-dashoffset: -320; }
+}
+@keyframes mx-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: mx-fade-up 0.8s var(--ease-out-expo) forwards;
+}
+.animate-scan { animation: mx-scan 5.5s linear infinite; }
+.animate-pulse-soft { animation: mx-pulse 2.4s ease-in-out infinite; }
+.animate-marquee { animation: mx-marquee 38s linear infinite; }
+.animate-dash { animation: mx-dash 7s linear infinite; }
+.animate-sweep { animation: mx-sweep 6s linear infinite; transform-origin: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; animation: none !important; }
+  .animate-scan, .animate-pulse-soft, .animate-marquee, .animate-dash, .animate-sweep {
+    animation: none !important;
+  }
+  html { scroll-behavior: auto; }
+}

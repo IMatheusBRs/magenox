@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Magenox">
+  <defs>
+    <linearGradient id="mx-steel" gradientUnits="userSpaceOnUse" x1="0" y1="12" x2="0" y2="112">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="35%" stop-color="#B4BFCC"/>
+      <stop offset="60%" stop-color="#E8EEF5"/><stop offset="100%" stop-color="#6B7583"/>
+    </linearGradient>
+    <linearGradient id="mx-steel-x" gradientUnits="userSpaceOnUse" x1="0" y1="38" x2="0" y2="94">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="45%" stop-color="#C9D4E1"/>
+      <stop offset="100%" stop-color="#E6EDF5"/>
+    </linearGradient>
+    <radialGradient id="mx-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2E9BFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#2E9BFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path d="M12 44 L30 12 L64 28 L98 12 L116 44 L116 84 L64 112 L12 84 Z" fill="url(#mx-steel)"/>
+  <path d="M21 48 L34 24 L64 36 L94 24 L107 48 L107 82 L64 101 L21 82 Z" fill="#060A10"/>
+  <circle cx="64" cy="68" r="26" fill="url(#mx-core)"/>
+  <path d="M26 48 L42 38 L64 66 L86 38 L102 48 L74 72 L90 84 L76 94 L64 80 L52 94 L38 84 L54 72 Z" fill="url(#mx-steel-x)"/>
+</svg>
